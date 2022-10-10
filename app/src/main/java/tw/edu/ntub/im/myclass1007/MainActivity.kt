@@ -38,18 +38,18 @@ class MainActivity : AppCompatActivity() {
         val btnOrderFood = findViewById<Button>(R.id.btnFood)
 
         btnOrderDrink.setOnClickListener {
-            val itDrink = Intent(this, OrderDrinkActivity::class.java).apply{
+            val it = Intent(this, OrderDrinkActivity::class.java).apply{
                 this.putExtra("name", "林ㄚ杰")
                 this.putExtra("number", 30)
             }
             //startActivityForResult(it, 9999) 被棄用是怎樣啦
-            orderDrinkLauncher.launch(itDrink)
+            orderDrinkLauncher.launch(it)
         }
         btnOrderFood.setOnClickListener {
-            val itFood = Intent(this, OrderFoodActivity::class.java).apply{
+            val it = Intent(this, OrderFoodActivity::class.java).apply{
                 this.putExtra("name", "林ㄚ杰")
             }
-            orderFoodLauncher.launch(itFood)
+            orderFoodLauncher.launch(it)
         }
     }
 }
