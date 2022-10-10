@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
             if (myData != null) {
                 Log.d("twoActivities", "MY_DATA:" + myData.getStringExtra("result"))
             }
+        }else{
+            Log.d("twoActivities", "已取消")
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,18 +38,18 @@ class MainActivity : AppCompatActivity() {
         val btnOrderFood = findViewById<Button>(R.id.btnFood)
 
         btnOrderDrink.setOnClickListener {
-            val it = Intent(this, OrderDrinkActivity::class.java).apply{
+            val itDrink = Intent(this, OrderDrinkActivity::class.java).apply{
                 this.putExtra("name", "林ㄚ杰")
                 this.putExtra("number", 30)
             }
             //startActivityForResult(it, 9999) 被棄用是怎樣啦
-            orderDrinkLauncher.launch(it)
+            orderDrinkLauncher.launch(itDrink)
         }
         btnOrderFood.setOnClickListener {
-            val it = Intent(this, OrderFoodActivity::class.java).apply{
+            val itFood = Intent(this, OrderFoodActivity::class.java).apply{
                 this.putExtra("name", "林ㄚ杰")
             }
-            orderFoodLauncher.launch(it)
+            orderFoodLauncher.launch(itFood)
         }
     }
 }
